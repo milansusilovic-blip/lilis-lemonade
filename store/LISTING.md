@@ -43,7 +43,7 @@ Casual, Simulation, Dress up, Single player, Offline
 ## Contact details
 Email: milan.susilovic@gmail.com
 Developer: Milan Šušilović
-Privacy policy URL: https://YOUR-GITHUB-NAME.github.io/lilis-lemonade/privacy-policy.html
+Privacy policy URL: https://github.com/milansusilovic-blip/lilis-lemonade/blob/main/docs/PRIVACY.md
 
 ## Graphics in this folder
 - icon-512.png – App icon (512 × 512)

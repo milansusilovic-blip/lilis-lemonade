@@ -1,6 +1,16 @@
 name: Build Android (Play Store)
 
+# Builds an UNSIGNED release AAB. Signing happens outside GitHub with the
+# owner's upload key, so no secrets are stored in this repository.
+# The result is pushed to the "builds" branch.
+
 on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "docs/**"
+      - "store/**"
+      - "*.md"
   workflow_dispatch:
     inputs:
       version_name:
@@ -8,9 +18,15 @@ on:
         required: true
         default: "1.0.0"
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      VERSION_NAME: ${{ github.event.inputs.version_name || '1.0.0' }}
+      VERSION_CODE: ${{ github.run_number }}
     steps:
       - uses: actions/checkout@v4
 
@@ -25,43 +41,33 @@ jobs:
 
       - uses: android-actions/setup-android@v3
 
-      - name: Check signing secrets
-        env:
-          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
-          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
-        run: |
-          if [ -z "$KEYSTORE_BASE64" ] || [ -z "$KEYSTORE_PASSWORD" ]; then
-            echo "::error::Signing secrets are missing. Add KEYSTORE_BASE64, KEYSTORE_PASSWORD, KEY_ALIAS and KEY_PASSWORD in Settings > Secrets and variables > Actions."
-            exit 1
-          fi
-
       - name: Install packages
         run: npm install
 
       - name: Copy game into Android project
         run: npx cap sync android
 
-      - name: Decode upload key
-        env:
-          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
-        run: echo "$KEYSTORE_BASE64" | tr -d '[:space:]' | base64 -d > "$RUNNER_TEMP/upload.jks"
-
-      - name: Build signed AAB and APK
+      - name: Build release AAB (unsigned)
         working-directory: android
-        env:
-          KEYSTORE_FILE: ${{ runner.temp }}/upload.jks
-          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
-          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
-          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-          VERSION_CODE: ${{ github.run_number }}
-          VERSION_NAME: ${{ github.event.inputs.version_name }}
         run: |
           chmod +x gradlew
-          ./gradlew bundleRelease assembleRelease --no-daemon
+          ./gradlew bundleRelease --no-daemon
 
       - uses: actions/upload-artifact@v4
         with:
-          name: lilis-lemonade-${{ github.event.inputs.version_name }}-build${{ github.run_number }}
-          path: |
-            android/app/build/outputs/bundle/release/app-release.aab
-            android/app/build/outputs/apk/release/app-release.apk
+          name: lilis-lemonade-${{ env.VERSION_NAME }}-build${{ github.run_number }}-unsigned
+          path: android/app/build/outputs/bundle/release/app-release.aab
+
+      - name: Publish AAB to the builds branch
+        run: |
+          OUT="$RUNNER_TEMP/out"
+          mkdir -p "$OUT"
+          cp android/app/build/outputs/bundle/release/app-release.aab "$OUT/lilis-lemonade-${VERSION_NAME}-build${VERSION_CODE}-unsigned.aab"
+          cd "$OUT"
+          printf 'Version %s, build %s, from commit %s\n' "$VERSION_NAME" "$VERSION_CODE" "$GITHUB_SHA" > BUILD.txt
+          git init -q -b builds
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -qm "Build ${VERSION_NAME} (${VERSION_CODE})"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" builds
