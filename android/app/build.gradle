@@ -4,7 +4,7 @@ android {
     namespace = "com.milansusilovic.lilislemonade"
     compileSdk = rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.milansusilovic.lilislemonade"
+        applicationId "panonia.learn"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode = Integer.parseInt(System.getenv("VERSION_CODE") ?: "1")
