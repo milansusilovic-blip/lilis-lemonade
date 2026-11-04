@@ -11,108 +11,36 @@ Ovaj folder je gotov Android projekat. Aplikaciju (.aab fajl za Play Store) grad
 
 ## Pregled celog puta
 
-| # | Korak | Koliko traje |
-|---|---|---|
-| 1 | Verifikacija Play Console naloga | Čekaš Google (obično 1–3 dana) |
-| 2 | GitHub nalog i repozitorijum | 10 min |
-| 3 | Ključ u GitHub Secrets | 5 min |
-| 4 | GitHub gradi aplikaciju (.aab) | 10 min |
-| 5 | Stranica sa politikom privatnosti | 5 min |
-| 6 | Kreiranje aplikacije u Play Console-u | 30–45 min |
-| 7 | Zatvoreni test: **12 testera, 14 dana** | 14+ dana |
-| 8 | Zahtev za produkciju, pa javna objava | Google pregleda oko 7 dana |
+| # | Korak | Ko radi | Status |
+|---|---|---|---|
+| 1 | Verifikacija Play Console naloga | Google | čeka se |
+| 2 | GitHub repozitorijum `milansusilovic-blip/lilis-lemonade` | Claude | ✅ urađeno |
+| 3 | GitHub gradi aplikaciju, Claude je potpisuje tvojim ključem | Claude | ✅ automatski |
+| 4 | Stranica sa politikom privatnosti | Claude | ✅ urađeno |
+| 5 | Kreiranje aplikacije u Play Console-u | Ti (+ Claude pomaže) | posle verifikacije |
+| 6 | Zatvoreni test: **12 testera, 14 dana** | Ti | 14+ dana |
+| 7 | Zahtev za produkciju, pa javna objava | Ti | Google pregleda oko 7 dana |
 
-Dok čekaš verifikaciju (korak 1), uradi korake 2–5.
+**Adresa politike privatnosti (za Play Console):**
+https://github.com/milansusilovic-blip/lilis-lemonade/blob/main/docs/PRIVACY.md
 
----
-
-## Šta je u paketu
-
-| Folder / fajl | Šta je |
-|---|---|
-| `www/` | Sama igra sa fontovima, radi bez interneta |
-| `android/` | Android projekat (Capacitor 8, Android 16 / API 36, uspravni ekran, ikonice, početni ekran) |
-| `.github/workflows/build-android.yml` | Recept po kom GitHub pravi potpisan .aab i .apk |
-| `docs/privacy-policy.html` | Politika privatnosti na tvoje ime |
-| `store/` | Ikona 512, baner 1024×500, 5 screenshotova i tekstovi (`LISTING.md`) |
-
-Odvojeno, u zip-u **lilis-lemonade-KLJUC**, dobijaš:
-- `lilis-lemonade-upload.jks`, tvoj ključ za potpisivanje
-- `KEYSTORE-PODACI.txt`, lozinke za taj ključ
-
-Sačuvaj oba fajla na dva mesta, na primer na USB i u Google Drive. **Nikad ih ne stavljaj na GitHub kao fajlove.** Ako ih izgubiš, ključ se može zameniti preko Google podrške, ali to traje.
+**Fajl za Play Store:** `lilis-lemonade-1.0.0-build1.aab`. Dobio si ga od Claude-a, već je potpisan.
 
 ---
 
-## Korak 1 – Verifikacija naloga (u toku)
+## Ključ za potpisivanje
 
-Google proverava tvoj identitet. Dok čekaš:
-- Proveri da li ti je stigao email od Google Play Console-a. Nekad traže još neki dokument.
-- U Play Console-u, pod **Account details**, proveri da su ime i adresa tačni.
+U zip-u **lilis-lemonade-KLJUC** su:
+- `lilis-lemonade-upload.jks`, tvoj ključ
+- `KEYSTORE-PODACI.txt`, njegova lozinka
 
-Kod ličnog naloga Google ponekad traži i potvrdu da imaš **Android telefon**. Tada instaliraš aplikaciju *Play Console* na telefon i prijaviš se istim nalogom.
+Ključ se **ne nalazi na GitHub-u**. GitHub pravi nepotpisan fajl, a Claude ga potpisuje. Za svaku buduću verziju igre pošalji Claude-u ovaj zip zajedno sa zahtevom, da potpiše novi .aab.
 
----
-
-## Korak 2 – GitHub repozitorijum
-
-1. Otvori https://github.com i napravi besplatan nalog. Najbolje je da ga otvoriš na isti Gmail.
-2. Gore desno klikni **+ → New repository**:
-   - Repository name: `lilis-lemonade`
-   - **Public** (potrebno za besplatnu stranicu sa politikom privatnosti)
-   - klikni **Create repository**.
-3. Na stranici praznog repozitorijuma klikni link **uploading an existing file**.
-4. Raspakuj `lilis-lemonade-app.zip` na računaru i prevuci **sav sadržaj foldera**, ne sam folder, u prozor na GitHub-u.
-5. Dole klikni **Commit changes**.
-6. Proveri da se u repozitorijumu vidi folder **`.github`**. Windows ponekad ne prevuče foldere koji počinju tačkom. Ako ga nema:
-   - klikni karticu **Actions → set up a workflow yourself**
-   - promeni ime fajla u `build-android.yml`
-   - obriši sve u prozoru i zalepi sadržaj fajla `.github/workflows/build-android.yml` iz paketa (otvori ga u Notepad-u)
-   - klikni **Commit changes**.
+Sačuvaj zip na dva mesta, na primer na USB i u Google Drive.
 
 ---
 
-## Korak 3 – Ključ u GitHub „Secrets"
-
-1. U repozitorijumu otvori **Settings** (gore desno) → levo **Secrets and variables → Actions**.
-2. Klikni **New repository secret** i dodaj 4 secreta. Ime i vrednost prepiši tačno iz `KEYSTORE-PODACI.txt`:
-
-| Name | Secret |
-|---|---|
-| `KEYSTORE_BASE64` | onaj dugački red teksta |
-| `KEYSTORE_PASSWORD` | lozinka |
-| `KEY_ALIAS` | `lilis-upload` |
-| `KEY_PASSWORD` | ista lozinka |
-
----
-
-## Korak 4 – GitHub gradi aplikaciju
-
-1. Otvori karticu **Actions**. Ako pita, klikni **I understand my workflows, go ahead and enable them**.
-2. Levo izaberi **Build Android (Play Store)**, pa desno klikni **Run workflow**.
-3. Ostavi verziju `1.0.0` i klikni zeleno dugme **Run workflow**.
-4. Sačekaj 5–10 minuta, dok se ne pojavi zelena kvačica ✅.
-5. Klikni na taj run i skroluj dole do **Artifacts**. Preuzmi zip i raspakuj ga. U njemu su:
-   - `app-release.aab`, fajl za Play Store
-   - `app-release.apk`, fajl za probu na tvom telefonu
-
-Ako dobiješ crveni ✗, klikni na run, pa na korak koji je crven. Iskopiraj tekst greške i pošalji ga meni.
-
-**Proba na telefonu:** pošalji sebi `app-release.apk`, otvori ga na telefonu i dozvoli „instalaciju iz nepoznatih izvora".
-
----
-
-## Korak 5 – Stranica sa politikom privatnosti
-
-1. U repozitorijumu otvori **Settings → Pages**.
-2. Pod **Build and deployment → Branch** izaberi `main` i folder `/docs`, pa klikni **Save**.
-3. Posle 2–5 minuta stranica radi na adresi:
-   `https://TVOJE-GITHUB-IME.github.io/lilis-lemonade/privacy-policy.html`
-4. Otvori je u pregledaču da proveriš. Tu adresu ćeš upisati u Play Console.
-
----
-
-## Korak 6 – Aplikacija u Play Console-u
+## Korak 5 – Aplikacija u Play Console-u
 
 ### 6a. Kreiraj aplikaciju
 **Home → Create app**:
@@ -124,7 +52,7 @@ Ako dobiješ crveni ✗, klikni na run, pa na korak koji je crven. Iskopiraj tek
 
 ### 6b. App content (levo dole: Policy → App content)
 Odgovori kako piše u `store/LISTING.md`:
-- **Privacy policy:** adresa iz koraka 5
+- **Privacy policy:** https://github.com/milansusilovic-blip/lilis-lemonade/blob/main/docs/PRIVACY.md
 - **Ads:** No
 - **App access:** All functionality is available without special access
 - **Content rating:** popuni upitnik i na sve odgovori **No**. Očekivan rejting je Everyone / PEGI 3.
@@ -142,7 +70,7 @@ Odgovori kako piše u `store/LISTING.md`:
 
 ---
 
-## Korak 7 – Zatvoreni test (12 testera, 14 dana)
+## Korak 6 – Zatvoreni test (12 testera, 14 dana)
 
 Kod ličnog naloga ovo je **obavezno** pre javne objave.
 
@@ -154,7 +82,7 @@ Kod ličnog naloga ovo je **obavezno** pre javne objave.
 
 ### 7b. Pošalji prvu verziju
 1. **Create new release.** Kad pita za **Play App Signing**, klikni **Continue** (prihvati).
-2. Ubaci `app-release.aab` iz koraka 4.
+2. Ubaci potpisan `.aab` fajl koji ti je poslao Claude.
 3. Release notes: `First test version of Lili's Lemonade.`
 4. **Next → Save → Send for review.** Prvi pregled traje od par sati do par dana.
 
@@ -174,7 +102,7 @@ Kad Google odobri, u **Testers** nađi **link za pridruživanje** (Join on Andro
 
 ---
 
-## Korak 8 – Javna objava
+## Korak 7 – Javna objava
 
 1. Posle 14 dana, na **Dashboard**-u se otvara **Apply for production**.
 2. Popuni kratak upitnik: kako si našao testere, šta su rekli, šta si popravio. Odgovori iskreno i konkretno.
@@ -185,9 +113,7 @@ Kad Google odobri, u **Testers** nađi **link za pridruživanje** (Join on Andro
 
 ## Nova verzija igre (kasnije)
 
-1. Zameni `www/index.html` na GitHub-u: klikni na fajl → olovka (Edit) ili **Upload files**.
-2. **Actions → Run workflow** sa većom verzijom, npr. `1.0.1`. Broj builda raste sam.
-3. Ubaci novi `.aab` u Play Console (u test ili u produkciju).
+Napiši Claude-u šta da promeni u igri i pošalji mu zip **lilis-lemonade-KLJUC**. Claude menja igru na GitHub-u, GitHub sam gradi novu verziju, a Claude ti šalje potpisan `.aab`. Ti ga samo ubaciš u Play Console.
 
 ---
 
