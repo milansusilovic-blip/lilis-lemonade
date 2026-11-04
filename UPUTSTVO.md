@@ -24,7 +24,7 @@ Ovaj folder je gotov Android projekat. Aplikaciju (.aab fajl za Play Store) grad
 **Adresa politike privatnosti (za Play Console):**
 https://github.com/milansusilovic-blip/lilis-lemonade/blob/main/docs/PRIVACY.md
 
-**Fajl za Play Store:** `lilis-lemonade-1.0.0-build1.aab`. Dobio si ga od Claude-a, već je potpisan.
+**Fajl za Play Store:** `lilis-lemonade-1.0.0-build3.aab`. Dobio si ga od Claude-a, već je potpisan.
 
 ---
 
