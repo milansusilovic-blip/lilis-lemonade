@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Lili\'s Lemonade</string>
+    <string name="title_activity_main">Lili\'s Lemonade</string>
+    <string name="package_name">com.milansusilovic.lilislemonade</string>
+    <string name="custom_url_scheme">com.milansusilovic.lilislemonade</string>
+</resources>

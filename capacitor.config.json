@@ -1,0 +1,13 @@
+{
+  "appId": "com.milansusilovic.lilislemonade",
+  "appName": "Lili's Lemonade",
+  "webDir": "www",
+  "android": {
+    "backgroundColor": "#4fc1f0"
+  },
+  "plugins": {
+    "SystemBars": {
+      "insetsHandling": "native"
+    }
+  }
+}

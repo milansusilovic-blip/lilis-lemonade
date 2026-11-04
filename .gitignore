@@ -1,0 +1,5 @@
+node_modules/
+*.jks
+*.keystore
+KEYSTORE*.txt
+android/app/src/main/assets/public/
