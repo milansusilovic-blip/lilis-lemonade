@@ -1,9 +1,9 @@
 {
-  "appId": "panonia.learn",
-  "appName": "Lili's Lemonade",
+  "appId": "com.milansusilovic.whizzbangworkshop",
+  "appName": "Whizzbang Workshop",
   "webDir": "www",
   "android": {
-    "backgroundColor": "#4fc1f0"
+    "backgroundColor": "#1E3B47"
   },
   "plugins": {
     "SystemBars": {

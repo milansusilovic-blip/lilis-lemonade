@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace = "com.milansusilovic.lilislemonade"
+    namespace = "com.milansusilovic.whizzbangworkshop"
     compileSdk = rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "panonia.learn"
+        applicationId "com.milansusilovic.whizzbangworkshop"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode = Integer.parseInt(System.getenv("VERSION_CODE") ?: "1")

@@ -1,4 +1,4 @@
-package com.milansusilovic.lilislemonade;
+package com.milansusilovic.whizzbangworkshop;
 
 import com.getcapacitor.BridgeActivity;
 

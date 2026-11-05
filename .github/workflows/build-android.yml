@@ -2,11 +2,11 @@ name: Build Android (Play Store)
 
 # Builds an UNSIGNED release AAB. Signing happens outside GitHub with the
 # owner's upload key, so no secrets are stored in this repository.
-# The result is pushed to the "builds" branch.
+# The result is pushed to the "builds-whizzbang" branch.
 
 on:
   push:
-    branches: [main]
+    branches: [whizzbang-workshop]
     paths-ignore:
       - "docs/**"
       - "store/**"
@@ -60,19 +60,19 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: lilis-lemonade-${{ env.VERSION_NAME }}-build${{ github.run_number }}-unsigned
+          name: whizzbang-workshop-${{ env.VERSION_NAME }}-build${{ github.run_number }}-unsigned
           path: android/app/build/outputs/bundle/release/app-release.aab
 
       - name: Publish AAB to the builds branch
         run: |
           OUT="$RUNNER_TEMP/out"
           mkdir -p "$OUT"
-          cp android/app/build/outputs/bundle/release/app-release.aab "$OUT/lilis-lemonade-${VERSION_NAME}-build${VERSION_CODE}-unsigned.aab"
+          cp android/app/build/outputs/bundle/release/app-release.aab "$OUT/whizzbang-workshop-${VERSION_NAME}-build${VERSION_CODE}-unsigned.aab"
           cd "$OUT"
           printf 'Version %s, build %s, from commit %s\n' "$VERSION_NAME" "$VERSION_CODE" "$GITHUB_SHA" > BUILD.txt
-          git init -q -b builds
+          git init -q -b builds-whizzbang
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           git commit -qm "Build ${VERSION_NAME} (${VERSION_CODE})"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" builds
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git" builds-whizzbang

@@ -1,8 +1,8 @@
 {
-  "name": "lilis-lemonade",
+  "name": "whizzbang-workshop",
   "version": "1.0.0",
   "private": true,
-  "description": "Lili's Lemonade - sell lemonade on a sunny Beverly Hills street and shop at Bijou Boutique.",
+  "description": "Whizzbang Workshop - build wonderfully odd machines for your workshop friends.",
   "scripts": {
     "sync": "cap sync android"
   },

@@ -1,54 +1,52 @@
-# Lili's Lemonade – Google Play listing
+# Whizzbang Workshop – Google Play listing
 
 Copy each block into Play Console > Grow users > Store presence > Main store listing.
 
 ## App name (max 30)
-Lili's Lemonade
+Whizzbang Workshop
 
 ## Short description (max 80)
-Sell lemonade on a sunny Beverly Hills street and shop for cute outfits!
+Grab the right parts fast and build wonderfully odd machines for your friends!
 
 ## Full description (max 4000)
-Help Lili run the sunniest lemonade stand in Beverly Hills!
+Welcome to Whizzbang Workshop, where every customer wants a machine nobody has ever built before!
 
-Shoppers stroll down the palm-lined sidewalk and some of them are thirsty. Tap them to pour a fresh cup of lemonade before they lose patience. Serve them fast and they leave a tip!
+A pancake robot. A flying sock finder. An alarm clock that sings. A clock that runs backwards. Your workshop friends keep coming with odd ideas, and you are the one who builds them.
 
-When the pitcher runs dry, squeeze more lemons. When the coins pile up, Lili walks next door to Bijou Boutique, a pink little shop full of treasures:
+Each order shows which parts the machine needs. Look at the parts shelf and tap the right gears, springs, bolts, wheels, propellers and light bulbs before the timer runs out. Tap a wrong part and you lose precious seconds. Finish in time and the machine whirs to life, puffs steam and pays you in shiny coins!
 
-• 6 handbags, from a little clutch to a designer tote
-• Party dresses, sundresses and polka dots
-• Heart shades, classic black and gold cat-eye sunglasses
-• Sun hats, a pink beret and a glamorous starlet hat
-• Pink sneakers and ruby heels
-
-Everything Lili buys, she wears. Mix and match a new look, then head back to the stand. But hurry, customers are waiting!
+MEET THE CREW
+• Master Gearbit, the inventor with goggles on his head and a mustache full of ideas
+• Auntie Coil, who measures everything twice and never throws anything away
+• Captain Teapot, who never goes anywhere without his mug
+• Little Bolt, the apprentice who always loses something
 
 FEATURES
-• Easy one-tap play for all ages
-• Bright, sunny Beverly Hills setting
-• Walk around a real boutique and pick what you love
-• Dress up Lili with 17 items to collect
-• A happy puppy that wags its tail when you make a sale
+• Quick, simple tap play for all ages
+• 10 different machine parts and 12 crazy machines to build
+• Levels get faster and need more parts as you go
+• Earn coins and beat your best score
+• Cheerful sounds and animated machines
 • Plays offline
 • No ads, no in-app purchases, no data collected
 
-Grab a cup and start selling. Can you help Lili own the whole boutique?
+How many machines can you build before the workshop closes?
 
 ## Category
-Game > Casual
+Game > Puzzle (or Casual)
 
 ## Tags (pick up to 5 in Play Console)
-Casual, Simulation, Dress up, Single player, Offline
+Casual, Puzzle, Single player, Offline, Stylized
 
 ## Contact details
 Email: milan.susilovic@gmail.com
 Developer: Milan Šušilović
-Privacy policy URL: https://github.com/milansusilovic-blip/lilis-lemonade/blob/main/docs/PRIVACY.md
+Privacy policy URL: https://github.com/milansusilovic-blip/lilis-lemonade/blob/whizzbang-workshop/docs/PRIVACY.md
 
 ## Graphics in this folder
 - icon-512.png – App icon (512 × 512)
 - feature-graphic-1024x500.png – Feature graphic
-- screenshots/01…05.png – Phone screenshots (1080 × 1920)
+- screenshots/screenshot-1…5.png – Phone screenshots (1080 × 1920)
 
 ---
 

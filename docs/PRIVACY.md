@@ -1,17 +1,17 @@
-# Privacy Policy – Lili's Lemonade
+# Privacy Policy – Whizzbang Workshop
 
-*Last updated: November 4, 2026*
+*Last updated: November 5, 2026*
 
-Lili's Lemonade ("the game") is published by Milan Šušilović, an independent developer from Serbia. The game is made for players of all ages, including children, and it is built so that it does not collect any personal information.
+Whizzbang Workshop ("the game") is published by Milan Šušilović, an independent developer from Serbia. The game is made for players of all ages, including children, and it is built so that it does not collect any personal information.
 
 ## Information we collect
 None. The game does not ask for your name, email, location, contacts, photos or any other personal information. It does not use an account or a login.
 
 ## Game progress
-Your coins and the items you buy for Lili are saved only on your own device, inside the app. This data never leaves your device and we cannot see it. Uninstalling the game or clearing its storage deletes it.
+Your best score is saved only on your own device, inside the app. This data never leaves your device and we cannot see it. Uninstalling the game or clearing its storage deletes it.
 
 ## Advertising, analytics and purchases
-The game shows no advertising, contains no analytics or tracking tools, and has no in-app purchases. All dollars in the game are pretend money earned by playing.
+The game shows no advertising, contains no analytics or tracking tools, and has no in-app purchases. All coins in the game are pretend coins earned by playing.
 
 ## Third parties
 The game does not share any data with third parties, because it collects none. It works fully offline.
