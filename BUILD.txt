@@ -1,0 +1,1 @@
+Version 1.0.0, build 6, from commit 3d2cb0b156a5ee922c3071983ecf933eea9825e1
