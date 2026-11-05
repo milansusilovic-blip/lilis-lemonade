@@ -6,14 +6,16 @@ Copy each block into Play Console > Grow users > Store presence > Main store lis
 Whizzbang Workshop
 
 ## Short description (max 80)
-Grab the right parts fast and build wonderfully odd machines for your friends!
+Snap the right pieces into place and build model ships, planes and trains!
 
 ## Full description (max 4000)
-Welcome to Whizzbang Workshop, where every customer wants a machine nobody has ever built before!
+Welcome to Whizzbang Workshop, where your friends order model kits and you put them together!
 
-A pancake robot. A flying sock finder. An alarm clock that sings. A clock that runs backwards. Your workshop friends keep coming with odd ideas, and you are the one who builds them.
+A sailing ship. A biplane. A steam train. A lighthouse, a hot air balloon, a dancing robot and a race car. Every order starts as a blueprint with dashed outlines. Find the matching pieces on the parts shelf and tap them. Each piece flies across the workshop and snaps into its exact place, like a puzzle.
 
-Each order shows which parts the machine needs. Look at the parts shelf and tap the right gears, springs, bolts, wheels, propellers and light bulbs before the timer runs out. Tap a wrong part and you lose precious seconds. Finish in time and the machine whirs to life, puffs steam and pays you in shiny coins!
+Finish before the timer runs out and the model comes to life: the ship sails on the waves, the plane takes off, the train chugs away and the lighthouse shines its beam. Tap a wrong piece and you lose precious seconds!
+
+At the end, see every model you built lined up on your display shelf.
 
 MEET THE CREW
 • Master Gearbit, the inventor with goggles on his head and a mustache full of ideas
@@ -22,15 +24,15 @@ MEET THE CREW
 • Little Bolt, the apprentice who always loses something
 
 FEATURES
+• 7 models to build, each with its own finishing animation
+• Puzzle-style building: every piece has its own spot on the blueprint
 • Quick, simple tap play for all ages
-• 10 different machine parts and 12 crazy machines to build
-• Levels get faster and need more parts as you go
+• Levels get faster and the shelf gets busier as you go
 • Earn coins and beat your best score
-• Cheerful sounds and animated machines
 • Plays offline
 • No ads, no in-app purchases, no data collected
 
-How many machines can you build before the workshop closes?
+How many models can you build before the workshop closes?
 
 ## Category
 Game > Puzzle (or Casual)
