@@ -7,7 +7,7 @@ Oznaka aplikacije: `com.milansusilovic.whizzbangworkshop`
 
 | Fajl | Šta je |
 |---|---|
-| `whizzbang-workshop-1.0.0-buildN.aab` | Gotova, potpisana aplikacija. Ide direktno u Play Console. |
+| `whizzbang-workshop-1.0.0-build6.aab` | Gotova, potpisana aplikacija. Ide direktno u Play Console. |
 | `store/icon-512.png` | Ikona za prodavnicu |
 | `store/feature-graphic-1024x500.png` | Baner (Feature graphic) |
 | `store/screenshots/` | 5 slika ekrana za telefon (1080 × 1920) |
